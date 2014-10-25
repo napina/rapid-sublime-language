@@ -1,0 +1,10 @@
+# [PackageDev] target_format: plist, ext: tmLanguage
+---
+name: Rapid
+scopeName: source.rapid
+fileTypes: [rc, rh]
+uuid: cd4e6b22-a322-4771-8eef-91166b808f3d
+
+patterns:
+- 
+...
