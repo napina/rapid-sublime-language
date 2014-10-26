@@ -24,6 +24,14 @@
 			<string>#string</string>
 		</dict>
 		<dict>
+			<key>include</key>
+			<string>#struct</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#attribute</string>
+		</dict>
+		<dict>
 			<key>match</key>
 			<string>(\b(module|alias|enum|bitmask|struct|interface|operator|attribute|unittest)\b)</string>
 			<key>name</key>
@@ -61,6 +69,12 @@
 		</dict>
 		<dict>
 			<key>match</key>
+			<string>(\b(public|private|protected|internal))</string>
+			<key>name</key>
+			<string>storage.modifier.rapid</string>
+		</dict>
+		<dict>
+			<key>match</key>
 			<string>(\b(bool|int|int8|int16|int32|int64|int128|uint|uint8|uint16|uint32|uint64|uint128)\b)</string>
 			<key>name</key>
 			<string>storage.type.integer.source.rapid</string>
@@ -89,9 +103,9 @@
 		<key>attribute</key>
 		<dict>
 			<key>match</key>
-			<string>(@[A-Za-z_](\([A-Za-z0-9_]+\)*))</string>
+			<string>(@[A-Za-z_]+(\([A-Za-z0-9_]+\))*\s)</string>
 			<key>name</key>
-			<string>attribute.source.rapid</string>
+			<string>entity.other.attribute-name.source.rapid</string>
 		</dict>
 		<key>comments</key>
 		<dict>
@@ -175,7 +189,7 @@
 			<string>(\")</string>
 			<key>endCaptures</key>
 			<dict>
-				<key>0</key>
+				<key>1</key>
 				<dict>
 					<key>name</key>
 					<string>punctuation.definition.string.end.source.rapid</string>
@@ -183,11 +197,20 @@
 			</dict>
 			<key>name</key>
 			<string>string.quoted.double.source.rapid</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>(\\.)</string>
+					<key>name</key>
+					<string>punctuation.definition.string</string>
+				</dict>
+			</array>
 		</dict>
 		<key>struct</key>
 		<dict>
 			<key>begin</key>
-			<string>(?x)^\s*((?:\b(?:public|private|internal|static)\b\s)*)(struct)\s+([A-Za-z_]\w+)\b</string>
+			<string>(?x)^\s*((?:\b(?:public|internal|local)\b\s)*)(struct)\s+([A-Za-z_]\w+)\b</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
@@ -203,11 +226,11 @@
 				<key>3</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.type.class.source.rapid</string>
+					<string>entity.name.type.struct.source.rapid</string>
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>(\{)</string>
+			<string>(?:{)</string>
 			<key>name</key>
 			<string>meta.definition.struct.source.rapid</string>
 			<key>patterns</key>
@@ -215,6 +238,10 @@
 				<dict>
 					<key>include</key>
 					<string>#structInheritance</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#attribute</string>
 				</dict>
 			</array>
 		</dict>
@@ -225,8 +252,16 @@
 				<dict>
 					<key>begin</key>
 					<string>\b(implements)\b</string>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.inheritance.source.rapid</string>
+						</dict>
+					</dict>
 					<key>end</key>
-					<string>(?={)</string>
+					<string>(?=[\{@])</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -235,7 +270,7 @@
 								<key>1</key>
 								<dict>
 									<key>name</key>
-									<string>storage.type.source.rapid</string>
+									<string>entity.name.type.interface.source.rapid</string>
 								</dict>
 							</dict>
 							<key>match</key>

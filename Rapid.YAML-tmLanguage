@@ -9,7 +9,8 @@ patterns:
 - include: '#comments'
 - include: '#numbers'
 - include: '#string'
-#- include: '#struct'
+- include: '#struct'
+- include: '#attribute'
 - name: keyword.core.source.rapid
   match: (\b(module|alias|enum|bitmask|struct|interface|operator|attribute|unittest)\b)
 - name: keyword.auto.source.rapid
@@ -22,8 +23,8 @@ patterns:
   match: (\b(new|delete)\b)
 - name: keyword.modifier.source.rapid
   match: (\b(static|const)\b)
-#- name: storage.modifier.rapid
-#  match: (\b(public|private|protected|internal))
+- name: storage.modifier.rapid
+  match: (\b(public|private|protected|internal))
 - name: storage.type.integer.source.rapid
   match: (\b(bool|int|int8|int16|int32|int64|int128|uint|uint8|uint16|uint32|uint64|uint128)\b)
 - name: storage.type.float.source.rapid
@@ -59,26 +60,27 @@ repository:
       match: (\b0b(0|1)+\b)
 
   struct:
-    name: meta.definition.struct.source.rapid
-    begin: (?x)^\s*((?:\b(?:public|private|internal|static)\b\s)*)(struct)\s+([A-Za-z_]\w+)\b
+    begin: (?x)^\s*((?:\b(?:public|internal|local)\b\s)*)(struct)\s+([A-Za-z_]\w+)\b
     captures:
       '1': {name: storage.modifier.source.rapid}
       '2': {name: storage.type.source.rapid}
-      '3': {name: entity.name.type.class.source.rapid}
-    end: (\{)
+      '3': {name: entity.name.type.struct.source.rapid}
+    end: (?:{)
+    name: meta.definition.struct.source.rapid
     patterns:
     - include: '#structInheritance'
+    - include: '#attribute'
 
   structInheritance:
     patterns:
     - begin: \b(implements)\b
-      #captures:
-         #'1': {name: keyword.core.source.rapid}
-      end: (?={)
+      captures:
+        '1': {name: keyword.inheritance.source.rapid}
+      end: (?=[\{@])
       patterns:
       - match: (\s*,?([A-Za-z_]\w*)\b)
         captures:
-          '1': {name: storage.type.source.rapid}
+          '1': {name: entity.name.type.interface.source.rapid}
 
   string:
     name: string.quoted.double.source.rapid
@@ -87,10 +89,13 @@ repository:
       '0': {name: punctuation.definition.string.begin.source.rapid}
     end: (\")
     endCaptures:
-      '0': {name: punctuation.definition.string.end.source.rapid}
+      '1': {name: punctuation.definition.string.end.source.rapid}
+    patterns:
+    - match: (\\.)
+      name: punctuation.definition.string #constant.character.escape.source.rapid
 
   attribute:
-    name: attribute.source.rapid
-    match: (@[A-Za-z_](\([A-Za-z0-9_]+\)*))
+    name: entity.other.attribute-name.source.rapid
+    match: (@[A-Za-z_]+(\([A-Za-z0-9_]+\))*\s)
 
 ...
