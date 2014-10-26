@@ -11,6 +11,7 @@ patterns:
 - include: '#string'
 - include: '#struct'
 - include: '#attribute'
+- include: '#scopeLimit'
 - name: keyword.core.source.rapid
   match: (\b(module|alias|enum|bitmask|struct|interface|operator|attribute|unittest)\b)
 - name: keyword.auto.source.rapid
@@ -18,12 +19,12 @@ patterns:
 - name: keyword.inheritance.source.rapid
   match: (\b(implements|override|final)\b)
 - name: keyword.control.source.rapid
-  match: (\b(if|else|while|do|for|foreach|switch|return|break|continue|finally)\b)
+  match: (\b(if|else|while|do|for|foreach|switch|match|return|break|continue|finally)\b)
 - name: keyword.memory.source.rapid
   match: (\b(new|delete)\b)
 - name: keyword.modifier.source.rapid
   match: (\b(static|const)\b)
-- name: storage.modifier.rapid
+- name: keyword.modifier.rapid
   match: (\b(public|private|protected|internal))
 - name: storage.type.integer.source.rapid
   match: (\b(bool|int|int8|int16|int32|int64|int128|uint|uint8|uint16|uint32|uint64|uint128)\b)
@@ -51,7 +52,7 @@ repository:
   numbers:
     patterns:
     - name: constant.numeric.float.source.rapid
-      match: ((\b|-)[0-9_]+\.[0-9_]+(e\-[0-9]+)?[hfd])
+      match: ((\b|-)[0-9_]+\.[0-9_]+(e\-[0-9]+)?[hfd]?)
     - name: constant.numeric.integer.source.rapid
       match: ((\b|-)[0-9_]+([ul]{1,2})?\b)
     - name: constant.numeric.hex.source.rapid
@@ -62,8 +63,8 @@ repository:
   struct:
     begin: (?x)^\s*((?:\b(?:public|internal|local)\b\s)*)(struct)\s+([A-Za-z_]\w+)\b
     captures:
-      '1': {name: storage.modifier.source.rapid}
-      '2': {name: storage.type.source.rapid}
+      '1': {name: keyword.modifier.source.rapid}
+      '2': {name: keyword.struct.source.rapid}
       '3': {name: entity.name.type.struct.source.rapid}
     end: (?:{)
     name: meta.definition.struct.source.rapid
@@ -80,7 +81,7 @@ repository:
       patterns:
       - match: (\s*,?([A-Za-z_]\w*)\b)
         captures:
-          '1': {name: entity.name.type.interface.source.rapid}
+          '1': {name: entity.other.inherited-class.source.rapid}
 
   string:
     name: string.quoted.double.source.rapid
@@ -96,6 +97,15 @@ repository:
 
   attribute:
     name: entity.other.attribute-name.source.rapid
-    match: (@[A-Za-z_]+(\([A-Za-z0-9_]+\))*\s)
+    match: (@[A-Za-z]+(\([A-Za-z0-9_]+\))*\s)
+
+  scopeLimit:
+    patterns:
+    - match: (\[(\s*[A-Za-z0-9_]+,?)*\s*\])(?:\s?\{)
+      captures:
+        '1': {name: meta.tag.source.rapid}
+    - match: (?:\))\s(\[(\s*[A-Za-z0-9_]+,?)*\s*\])(?:\s?(\b|\;))
+      captures:
+        '1': {name: meta.tag.source.rapid}
 
 ...

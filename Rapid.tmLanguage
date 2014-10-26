@@ -32,6 +32,10 @@
 			<string>#attribute</string>
 		</dict>
 		<dict>
+			<key>include</key>
+			<string>#scopeLimit</string>
+		</dict>
+		<dict>
 			<key>match</key>
 			<string>(\b(module|alias|enum|bitmask|struct|interface|operator|attribute|unittest)\b)</string>
 			<key>name</key>
@@ -51,7 +55,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(\b(if|else|while|do|for|foreach|switch|return|break|continue|finally)\b)</string>
+			<string>(\b(if|else|while|do|for|foreach|switch|match|return|break|continue|finally)\b)</string>
 			<key>name</key>
 			<string>keyword.control.source.rapid</string>
 		</dict>
@@ -71,7 +75,7 @@
 			<key>match</key>
 			<string>(\b(public|private|protected|internal))</string>
 			<key>name</key>
-			<string>storage.modifier.rapid</string>
+			<string>keyword.modifier.rapid</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -103,7 +107,7 @@
 		<key>attribute</key>
 		<dict>
 			<key>match</key>
-			<string>(@[A-Za-z_]+(\([A-Za-z0-9_]+\))*\s)</string>
+			<string>(@[A-Za-z]+(\([A-Za-z0-9_]+\))*\s)</string>
 			<key>name</key>
 			<string>entity.other.attribute-name.source.rapid</string>
 		</dict>
@@ -149,7 +153,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>((\b|-)[0-9_]+\.[0-9_]+(e\-[0-9]+)?[hfd])</string>
+					<string>((\b|-)[0-9_]+\.[0-9_]+(e\-[0-9]+)?[hfd]?)</string>
 					<key>name</key>
 					<string>constant.numeric.float.source.rapid</string>
 				</dict>
@@ -170,6 +174,36 @@
 					<string>(\b0b(0|1)+\b)</string>
 					<key>name</key>
 					<string>constant.numeric.binary.source.rapid</string>
+				</dict>
+			</array>
+		</dict>
+		<key>scopeLimit</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>meta.tag.source.rapid</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(\[(\s*[A-Za-z0-9_]+,?)*\s*\])(?:\s?\{)</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>meta.tag.source.rapid</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(?:\))\s(\[(\s*[A-Za-z0-9_]+,?)*\s*\])(?:\s?(\b|\;))</string>
 				</dict>
 			</array>
 		</dict>
@@ -216,12 +250,12 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>storage.modifier.source.rapid</string>
+					<string>keyword.modifier.source.rapid</string>
 				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>storage.type.source.rapid</string>
+					<string>keyword.struct.source.rapid</string>
 				</dict>
 				<key>3</key>
 				<dict>
@@ -270,7 +304,7 @@
 								<key>1</key>
 								<dict>
 									<key>name</key>
-									<string>entity.name.type.interface.source.rapid</string>
+									<string>entity.other.inherited-class.source.rapid</string>
 								</dict>
 							</dict>
 							<key>match</key>
