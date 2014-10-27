@@ -10,23 +10,23 @@
             <key>settings</key>
             <dict>
                 <key>background</key>
-                <string>#1a1a1a</string>
+                <string>#161a1a</string>
                 <key>caret</key>
                 <string>#f0f0f0</string>
                 <key>foreground</key>
-                <string>#e0e0e0</string>
+                <string>#c0c0c0</string>
                 <key>invisibles</key>
                 <string>#F3FFB51A</string>
                 <key>lineHighlight</key>
                 <string>#2a2a2a</string>
                 <key>selection</key>
-                <string>#205078</string>
+                <string>#205088</string>
                 <!--key>selectionForeground</key>
                 <string>#ffffff</string-->
                 <key>findHighlight</key>
                 <string>#e74c3c</string>
                 <key>inactiveSelection</key>
-                <string>#e74c3c</string>
+                <string>#204068</string>
                 <key>gutter</key>
                 <string>#2a2a2a</string>
                 <key>gutterForeground</key>
@@ -57,49 +57,10 @@
             <string>constant</string>
             <key>settings</key>
             <dict>
-                <key>foreground</key>
-                <string>#ed971f</string>
-                <key>fontStyle</key>
-                <string></string>
-            </dict>
-        </dict>
-        <dict>
-            <key>name</key>
-            <string>Entity</string>
-            <key>scope</key>
-            <string>entity</string>
-            <key>settings</key>
-            <dict>
-                <key>fontStyle</key>
-                <string>bold</string>
-                <key>foreground</key>
-                <string>#d0e0f0</string>
-            </dict>
-        </dict>
-        <dict>
-            <key>name</key>
-            <string>Keyword</string>
-            <key>scope</key>
-            <string>keyword</string>
-            <key>settings</key>
-            <dict>
-                <key>fontStyle</key>
-                <string> bold</string>
-                <key>foreground</key>
-                <string>#569ce6</string>
-            </dict>
-        </dict>
-        <dict>
-            <key>name</key>
-            <string>Storage</string>
-            <key>scope</key>
-            <string>storage</string>
-            <key>settings</key>
-            <dict>
                 <key>fontStyle</key>
                 <string></string>
                 <key>foreground</key>
-                <string>#a6e22e</string>
+                <string>#fd871f</string>
             </dict>
         </dict>
         <dict>
@@ -112,7 +73,59 @@
                 <key>fontStyle</key>
                 <string></string>
                 <key>foreground</key>
-                <string>#fd971f</string>
+                <string>#d0d000</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Keyword</string>
+            <key>scope</key>
+            <string>keyword</string>
+            <key>settings</key>
+            <dict>
+                <key>fontStyle</key>
+                <string></string>
+                <key>foreground</key>
+                <string>#22d0a2</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Storage</string>
+            <key>scope</key>
+            <string>storage</string>
+            <key>settings</key>
+            <dict>
+                <key>fontStyle</key>
+                <string></string>
+                <key>foreground</key>
+                <string>#46acf6</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Storage</string>
+            <key>scope</key>
+            <string>storage.type</string>
+            <key>settings</key>
+            <dict>
+                <key>fontStyle</key>
+                <string></string>
+                <key>foreground</key>
+                <string>#46acf6</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Storage</string>
+            <key>scope</key>
+            <string>storage.modifier</string>
+            <key>settings</key>
+            <dict>
+                <key>fontStyle</key>
+                <string></string>
+                <key>foreground</key>
+                <string>#22d082</string>
             </dict>
         </dict>
         <dict>
@@ -136,9 +149,61 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>#e67e22</string>
+                <string>#e0e0e0</string>
                 <key>fontStyle</key>
                 <string></string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Entity</string>
+            <key>scope</key>
+            <string>entity</string>
+            <key>settings</key>
+            <dict>
+                <key>fontStyle</key>
+                <string>bold</string>
+                <key>foreground</key>
+                <string>#ffffff</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Entity inherited-class</string>
+            <key>scope</key>
+            <string>entity.other.inherited-class</string>
+            <key>settings</key>
+            <dict>
+                <key>fontStyle</key>
+                <string>italic</string>
+                <key>foreground</key>
+                <string>#ffffff</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>attribute</string>
+            <key>scope</key>
+            <string>entity.other.attribute-name</string>
+            <key>settings</key>
+            <dict>
+                <key>fontStyle</key>
+                <string>bold</string>
+                <key>foreground</key>
+                <string>#506070</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>attribute</string>
+            <key>scope</key>
+            <string>entity.other.attribute-name.value</string>
+            <key>settings</key>
+            <dict>
+                <key>fontStyle</key>
+                <string>bold</string>
+                <key>foreground</key>
+                <string>#708090</string>
             </dict>
         </dict>
         <dict>
@@ -154,19 +219,7 @@
                 <string>#ffffff</string>
             </dict>
         </dict>
-        <dict>
-            <key>name</key>
-            <string>Entity inherited-class</string>
-            <key>scope</key>
-            <string>entity.other.inherited-class</string>
-            <key>settings</key>
-            <dict>
-                <key>fontStyle</key>
-                <string>italic</string>
-                <key>foreground</key>
-                <string>#d0e0f0</string>
-            </dict>
-        </dict>
+        
         <dict>
             <key>name</key>
             <string>String embedded-source</string>
@@ -221,9 +274,9 @@
             <key>settings</key>
             <dict>
                 <key>fontStyle</key>
-                <string></string>
+                <string>bold</string>
                 <key>foreground</key>
-                <string>#3498db</string>
+                <string>#f0f0f0</string>
             </dict>
         </dict>
         <dict>
@@ -241,13 +294,26 @@
         </dict>
         <dict>
             <key>name</key>
+            <string>Support.type</string>
+            <key>scope</key>
+            <string>support.type</string>
+            <key>settings</key>
+            <dict>
+                <key>fontStyle</key>
+                <string></string>
+                <key>foreground</key>
+                <string>#46acf6</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
             <string>C&#x2f;C++ Preprocessor Line</string>
             <key>scope</key>
             <string>other.preprocessor.c</string>
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>#3498db</string>
+                <string>#0000db</string>
             </dict>
         </dict>
         <dict>
@@ -258,7 +324,7 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>#2ecc71</string>
+                <string>#000071</string>
             </dict>
         </dict>
         <dict>
@@ -270,74 +336,6 @@
             <dict>
                 <key>foreground</key>
                 <string>#c74c3c</string>
-            </dict>
-        </dict>
-        <dict>
-            <key>name</key>
-            <string>attribute</string>
-            <key>scope</key>
-            <string>entity.other.attribute-name</string>
-            <key>settings</key>
-            <dict>
-                <key>foreground</key>
-                <string>#608b4e</string>
-                <!-- <key>fontStyle</key>
-                <string> bold</string> -->
-            </dict>
-        </dict>
-        <dict>
-            <key>name</key>
-            <string>html punctuations tags</string>
-            <key>scope</key>
-            <string>punctuation.definition.tag.end, punctuation.definition.tag.begin, punctuation.definition.tag</string>
-            <key>settings</key>
-            <dict>
-                <key>foreground</key>
-                <string>#fff</string>
-            </dict>
-        </dict>
-        <dict>
-            <key>name</key>
-            <string>LESS variables</string>
-            <key>scope</key>
-            <string>variable.other.less</string>
-            <key>settings</key>
-            <dict>
-                <key>foreground</key>
-                <string>#ffffff</string>
-            </dict>
-        </dict>
-        <dict>
-            <key>name</key>
-            <string>LESS variables</string>
-            <key>scope</key>
-            <string>entity.other.less.mixin</string>
-            <key>settings</key>
-            <dict>
-                <key>foreground</key>
-                <string>#9b59b6</string>
-            </dict>
-        </dict>
-        <dict>
-            <key>name</key>
-            <string>LESS units</string>
-            <key>scope</key>
-            <string>source.css.less keyword.unit.css</string>
-            <key>settings</key>
-            <dict>
-                <key>foreground</key>
-                <string>#3498db</string>
-            </dict>
-        </dict>
-        <dict>
-            <key>name</key>
-            <string>Doctype&#x2f;XML Processing</string>
-            <key>scope</key>
-            <string>meta.tag.sgml.doctype.xml, declaration.sgml.html declaration.doctype, declaration.sgml.html declaration.doctype entity, declaration.sgml.html declaration.doctype string, declaration.xml-processing, declaration.xml-processing entity, declaration.xml-processing string, doctype</string>
-            <key>settings</key>
-            <dict>
-                <key>foreground</key>
-                <string>#3c444d</string>
             </dict>
         </dict>
     </array>
