@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
 	<key>fileTypes</key>
@@ -29,29 +29,15 @@
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#attribute</string>
+			<string>#interface</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#attributes</string>
 		</dict>
 		<dict>
 			<key>include</key>
 			<string>#scopeLimit</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>(\b(module|alias|enum|bitmask|struct|interface|operator|attribute|unittest)\b)</string>
-			<key>name</key>
-			<string>keyword.core.source.rapid</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>(\b(auto|function|delegate)\b)</string>
-			<key>name</key>
-			<string>keyword.auto.source.rapid</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>(\b(implements|override|final)\b)</string>
-			<key>name</key>
-			<string>keyword.inheritance.source.rapid</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -61,21 +47,33 @@
 		</dict>
 		<dict>
 			<key>match</key>
+			<string>(\b(override|final)\b)</string>
+			<key>name</key>
+			<string>keyword.other.inheritance.source.rapid</string>
+		</dict>
+		<dict>
+			<key>match</key>
 			<string>(\b(new|delete)\b)</string>
 			<key>name</key>
-			<string>keyword.memory.source.rapid</string>
+			<string>keyword.other.memory.source.rapid</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(\b(static|const)\b)</string>
+			<string>(\b(auto|function|delegate)\b)</string>
 			<key>name</key>
-			<string>keyword.modifier.source.rapid</string>
+			<string>keyword.other.auto.source.rapid</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(\b(public|private|protected|internal))</string>
+			<string>(\b(public|private|protected|internal|local|static|const))</string>
 			<key>name</key>
-			<string>keyword.modifier.rapid</string>
+			<string>storage.modifier.rapid</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(\b(module|alias|extern|enum|bitmask|operator|attribute|unittest)\b)</string>
+			<key>name</key>
+			<string>storage.type.core.source.rapid</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -91,7 +89,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(\b(void|string)\b)</string>
+			<string>(\b(void|char|uchar|string)\b)</string>
 			<key>name</key>
 			<string>storage.type.misc.source.rapid</string>
 		</dict>
@@ -99,17 +97,41 @@
 			<key>match</key>
 			<string>(\b(true|false|nullptr)\b)</string>
 			<key>name</key>
-			<string>constant.source.rapid</string>
+			<string>constant.language.source.rapid</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(\b(this|base)\b)</string>
+			<key>name</key>
+			<string>variable.language.source.rapid</string>
 		</dict>
 	</array>
 	<key>repository</key>
 	<dict>
-		<key>attribute</key>
+		<key>attributes</key>
 		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>entity.other.attribute-name.source.rapid</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.other.attribute-name.value.source.rapid</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>entity.other.attribute-name.source.rapid</string>
+				</dict>
+			</dict>
 			<key>match</key>
-			<string>(@[A-Za-z]+(\([A-Za-z0-9_]+\))*\s)</string>
+			<string>(@[A-Za-z]+\()([A-Za-z0-9_., ]+)(\))</string>
 			<key>name</key>
-			<string>entity.other.attribute-name.source.rapid</string>
+			<string>meta.definition.attribute.source.rapid</string>
 		</dict>
 		<key>comments</key>
 		<dict>
@@ -143,9 +165,34 @@
 					<key>match</key>
 					<string>((//).*$\n?)</string>
 					<key>name</key>
-					<string>comment.line.source.rapid</string>
+					<string>comment.line.double-slash.source.rapid</string>
 				</dict>
 			</array>
+		</dict>
+		<key>interface</key>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>storage.modifier.source.rapid</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type.interface.source.rapid</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.type.interface.source.rapid</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(?x)^\s*((?:\b(?:public|internal|local)\b\s)*)(interface)\s+([A-Za-z_]\w+)\b</string>
+			<key>name</key>
+			<string>meta.definition.interface.source.rapid</string>
 		</dict>
 		<key>numbers</key>
 		<dict>
@@ -191,7 +238,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>(\[(\s*[A-Za-z0-9_]+,?)*\s*\])(?:\s?\{)</string>
+					<string>(\[(\s*[A-Za-z0-9_]+,?)*\s*\])(?:\s*\{)</string>
 				</dict>
 				<dict>
 					<key>captures</key>
@@ -203,7 +250,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>(?:\))\s(\[(\s*[A-Za-z0-9_]+,?)*\s*\])(?:\s?(\b|\;))</string>
+					<string>(?:\))\s(\[(\s*[A-Za-z0-9_]+,?)*\s*\])(?:\s*(\b|\;))</string>
 				</dict>
 			</array>
 		</dict>
@@ -250,12 +297,12 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.modifier.source.rapid</string>
+					<string>storage.modifier.source.rapid</string>
 				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.struct.source.rapid</string>
+					<string>storage.type.struct.source.rapid</string>
 				</dict>
 				<key>3</key>
 				<dict>
@@ -275,7 +322,11 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#attribute</string>
+					<string>#attributes</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#comments</string>
 				</dict>
 			</array>
 		</dict>
@@ -291,7 +342,7 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>keyword.inheritance.source.rapid</string>
+							<string>keyword.other.implements.source.rapid</string>
 						</dict>
 					</dict>
 					<key>end</key>

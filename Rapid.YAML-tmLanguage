@@ -10,30 +10,31 @@ patterns:
 - include: '#numbers'
 - include: '#string'
 - include: '#struct'
-- include: '#attribute'
+- include: '#interface'
+- include: '#attributes'
 - include: '#scopeLimit'
-- name: keyword.core.source.rapid
-  match: (\b(module|alias|enum|bitmask|struct|interface|operator|attribute|unittest)\b)
-- name: keyword.auto.source.rapid
-  match: (\b(auto|function|delegate)\b)
-- name: keyword.inheritance.source.rapid
-  match: (\b(implements|override|final)\b)
 - name: keyword.control.source.rapid
   match: (\b(if|else|while|do|for|foreach|switch|match|return|break|continue|finally)\b)
-- name: keyword.memory.source.rapid
+- name: keyword.other.inheritance.source.rapid
+  match: (\b(override|final)\b)
+- name: keyword.other.memory.source.rapid
   match: (\b(new|delete)\b)
-- name: keyword.modifier.source.rapid
-  match: (\b(static|const)\b)
-- name: keyword.modifier.rapid
-  match: (\b(public|private|protected|internal))
+- name: keyword.other.auto.source.rapid
+  match: (\b(auto|function|delegate)\b)
+- name: storage.modifier.rapid
+  match: (\b(public|private|protected|internal|local|static|const))
+- name: storage.type.core.source.rapid
+  match: (\b(module|alias|extern|enum|bitmask|operator|attribute|unittest)\b)
 - name: storage.type.integer.source.rapid
   match: (\b(bool|int|int8|int16|int32|int64|int128|uint|uint8|uint16|uint32|uint64|uint128)\b)
 - name: storage.type.float.source.rapid
   match: (\b(half|float|double|real|[hfd]?vec[234]|mat44|mat43)\b)
 - name: storage.type.misc.source.rapid
-  match: (\b(void|string)\b)
-- name: constant.source.rapid
+  match: (\b(void|char|uchar|string)\b)
+- name: constant.language.source.rapid
   match: (\b(true|false|nullptr)\b)
+- name: variable.language.source.rapid
+  match: (\b(this|base)\b)
 
 repository:
 
@@ -44,7 +45,7 @@ repository:
       captures:
         '0': {name: punctuation.definition.comment.source.rapid}
       end: \*/\n?
-    - name: comment.line.source.rapid
+    - name: comment.line.double-slash.source.rapid
       match: ((//).*$\n?)
       captures:
         '1': {name: punctuation.definition.comment.source.rapid}
@@ -61,27 +62,36 @@ repository:
       match: (\b0b(0|1)+\b)
 
   struct:
+    name: meta.definition.struct.source.rapid
     begin: (?x)^\s*((?:\b(?:public|internal|local)\b\s)*)(struct)\s+([A-Za-z_]\w+)\b
     captures:
-      '1': {name: keyword.modifier.source.rapid}
-      '2': {name: keyword.struct.source.rapid}
+      '1': {name: storage.modifier.source.rapid}
+      '2': {name: storage.type.struct.source.rapid}
       '3': {name: entity.name.type.struct.source.rapid}
     end: (?:{)
-    name: meta.definition.struct.source.rapid
     patterns:
     - include: '#structInheritance'
-    - include: '#attribute'
+    - include: '#attributes'
+    - include: '#comments'
 
   structInheritance:
     patterns:
     - begin: \b(implements)\b
       captures:
-        '1': {name: keyword.inheritance.source.rapid}
+        '1': {name: keyword.other.implements.source.rapid}
       end: (?=[\{@])
       patterns:
       - match: (\s*,?([A-Za-z_]\w*)\b)
         captures:
           '1': {name: entity.other.inherited-class.source.rapid}
+
+  interface:
+    name: meta.definition.interface.source.rapid
+    match: (?x)^\s*((?:\b(?:public|internal|local)\b\s)*)(interface)\s+([A-Za-z_]\w+)\b
+    captures:
+      '1': {name: storage.modifier.source.rapid}
+      '2': {name: storage.type.interface.source.rapid}
+      '3': {name: entity.name.type.interface.source.rapid}
 
   string:
     name: string.quoted.double.source.rapid
@@ -93,18 +103,23 @@ repository:
       '1': {name: punctuation.definition.string.end.source.rapid}
     patterns:
     - match: (\\.)
-      name: punctuation.definition.string #constant.character.escape.source.rapid
+      name: punctuation.definition.string
+      # name: constant.character.escape.source.rapid
 
-  attribute:
-    name: entity.other.attribute-name.source.rapid
-    match: (@[A-Za-z]+(\([A-Za-z0-9_]+\))*\s)
+  attributes:
+    name: meta.definition.attribute.source.rapid
+    match: (@[A-Za-z]+\()([A-Za-z0-9_., ]+)(\))
+    captures:
+     '1': {name: entity.other.attribute-name.source.rapid}
+     '2': {name: entity.other.attribute-name.value.source.rapid}
+     '3': {name: entity.other.attribute-name.source.rapid}
 
   scopeLimit:
     patterns:
-    - match: (\[(\s*[A-Za-z0-9_]+,?)*\s*\])(?:\s?\{)
+    - match: (\[(\s*[A-Za-z0-9_]+,?)*\s*\])(?:\s*\{)
       captures:
         '1': {name: meta.tag.source.rapid}
-    - match: (?:\))\s(\[(\s*[A-Za-z0-9_]+,?)*\s*\])(?:\s?(\b|\;))
+    - match: (?:\))\s(\[(\s*[A-Za-z0-9_]+,?)*\s*\])(?:\s*(\b|\;))
       captures:
         '1': {name: meta.tag.source.rapid}
 
