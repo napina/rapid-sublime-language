@@ -1,0 +1,4 @@
+{
+    "cmd": ["rapidcompiler_x64_d", "$file"],
+    "selector": "source.rapid"
+}
