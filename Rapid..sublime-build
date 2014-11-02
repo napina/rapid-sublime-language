@@ -1,4 +1,5 @@
 {
     "cmd": ["rapidcompiler_x64_d", "$file"],
-    "selector": "source.rapid"
+    "selector": "source.rapid",
+    "encoding": "cp1251"
 }
