@@ -34,7 +34,7 @@ patterns:
 - name: storage.type.misc.source.rapid
   match: (\b(void|char|uchar|string)\b)
 - name: constant.language.source.rapid
-  match: (\b(true|false|nullptr)\b)
+  match: (\b(true|false|null)\b)
 - name: variable.language.source.rapid
   match: (\b(this|base)\b)
 
@@ -55,7 +55,7 @@ repository:
   numbers:
     patterns:
     - name: constant.numeric.float.source.rapid
-      match: ((\b|-)[0-9_]+\.[0-9_]+(e\-[0-9]+)?[hfd]?)
+      match: ((\b|-)[0-9_]+\.[0-9_]+(e\-[0-9]+)?)
     - name: constant.numeric.integer.source.rapid
       match: ((\b|-)[0-9_]+([ul]{1,2})?\b)
     - name: constant.numeric.hex.source.rapid
