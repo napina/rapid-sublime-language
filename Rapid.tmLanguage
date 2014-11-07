@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
 	<key>fileTypes</key>
@@ -146,6 +146,20 @@
 			<key>patterns</key>
 			<array>
 				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.comment.source.rapid</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>((//).*$\n?)</string>
+					<key>name</key>
+					<string>comment.line.double-slash.source.rapid</string>
+				</dict>
+				<dict>
 					<key>begin</key>
 					<string>/\*</string>
 					<key>captures</key>
@@ -160,20 +174,13 @@
 					<string>\*/\n?</string>
 					<key>name</key>
 					<string>comment.block.source.rapid</string>
-				</dict>
-				<dict>
-					<key>captures</key>
-					<dict>
-						<key>1</key>
+					<key>patterns</key>
+					<array>
 						<dict>
-							<key>name</key>
-							<string>punctuation.definition.comment.source.rapid</string>
+							<key>include</key>
+							<string>#comments</string>
 						</dict>
-					</dict>
-					<key>match</key>
-					<string>((//).*$\n?)</string>
-					<key>name</key>
-					<string>comment.line.double-slash.source.rapid</string>
+					</array>
 				</dict>
 			</array>
 		</dict>
