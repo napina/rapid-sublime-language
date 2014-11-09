@@ -17,7 +17,7 @@ patterns:
 - include: '#scopeLimit'
 - include: '#compilerCode'
 - name: keyword.control.source.rapid
-  match: (\b(if|else|while|do|for|foreach|switch|match|return|break|continue|finally|defer)\b)
+  match: (\b(if|else|while|do|for|foreach|switch|match|return|break|continue|defer)\b)
 - name: keyword.other.inheritance.source.rapid
   match: (\b(override|final)\b)
 - name: keyword.other.memory.source.rapid
