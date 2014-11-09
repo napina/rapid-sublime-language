@@ -15,8 +15,9 @@ patterns:
 - include: '#enum'
 - include: '#functionPrototype'
 - include: '#scopeLimit'
+- include: '#compilerCode'
 - name: keyword.control.source.rapid
-  match: (\b(if|else|while|do|for|foreach|switch|match|return|break|continue|finally)\b)
+  match: (\b(if|else|while|do|for|foreach|switch|match|return|break|continue|finally|defer)\b)
 - name: keyword.other.inheritance.source.rapid
   match: (\b(override|final)\b)
 - name: keyword.other.memory.source.rapid
@@ -24,19 +25,19 @@ patterns:
 - name: keyword.other.auto.source.rapid
   match: (\b(auto|function|delegate)\b)
 - name: storage.modifier.rapid
-  match: (\b(public|private|protected|internal|local|static|const)\b)
+  match: (\b(public|private|protected|internal|const)\b)
 - name: storage.type.core.source.rapid
-  match: (\b(module|alias|extern|enum|bitmask|operator|attribute|unittest)\b)
+  match: (\b(module|alias|enum|bitmask|operator|attribute|unittest)\b)
 - name: storage.type.integer.source.rapid
   match: (\b(bool|int|int8|int16|int32|int64|int128|uint|uint8|uint16|uint32|uint64|uint128)\b)
 - name: storage.type.float.source.rapid
-  match: (\b(half|float|double|real|[hfd]?vec[234]|mat44|mat43)\b)
+  match: (\b(half|float|double|real|[hfd]?vec[234]|mat44|mat43|mat22)\b)
 - name: storage.type.misc.source.rapid
   match: (\b(void|char|uchar|string)\b)
 - name: constant.language.source.rapid
   match: (\b(true|false|null)\b)
 - name: variable.language.source.rapid
-  match: (\b(this|base)\b)
+  match: (\b(this)\b)
 
 repository:
 
@@ -142,5 +143,10 @@ repository:
     - match: (?:\))\s(\[(\s*[A-Za-z0-9_]+,?)*\s*\])(?:\s*(\b|\;))
       captures:
         '1': {name: meta.tag.source.rapid}
+
+  compilerCode:
+    name: entity.other.attribute-name
+    begin: (#)
+    end: ([#\n])
 
 ...
