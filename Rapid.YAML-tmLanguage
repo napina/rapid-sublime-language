@@ -10,7 +10,7 @@ patterns:
 - include: '#numbers'
 - include: '#string'
 - include: '#struct'
-- include: '#interface'
+#- include: '#interface'
 - include: '#attributes'
 - include: '#enum'
 - include: '#functionPrototype'
@@ -21,7 +21,9 @@ patterns:
 - name: keyword.other.inheritance.source.rapid
   match: (\b(override|final)\b)
 - name: keyword.other.memory.source.rapid
-  match: (\b(new|delete)\b)
+  match: (\b(new|delete|soa|aos)\b)
+- name: keyword.other.misc.source.rapid
+  match: (\b(use)\b)
 - name: keyword.other.auto.source.rapid
   match: (\b(auto|function|delegate)\b)
 - name: storage.modifier.rapid
@@ -31,7 +33,7 @@ patterns:
 - name: storage.type.integer.source.rapid
   match: (\b(bool|int|int8|int16|int32|int64|uint|uint8|uint16|uint32|uint64)\b)
 - name: storage.type.float.source.rapid
-  match: (\b(half|float|double|real|[hfd]?vec[234]|mat44|mat43|mat22)\b)
+  match: (\b(half|float|double|real|[hfd]vec[234]|[hfd]mat44|[hfd]mat43|[hfd]mat22)\b)
 - name: storage.type.misc.source.rapid
   match: (\b(void|char|uchar|string)\b)
 - name: constant.language.source.rapid
