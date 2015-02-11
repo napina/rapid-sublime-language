@@ -1,5 +1,5 @@
 {
-    "cmd": ["rapidcompiler_x64_d", "$file"],
+    "cmd": ["rapidcompiler_x64_r", "$file"],
     "selector": "source.rapid",
     "encoding": "utf-8"
 }
