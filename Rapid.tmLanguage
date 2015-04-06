@@ -25,19 +25,11 @@
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#struct</string>
+			<string>#storage</string>
 		</dict>
 		<dict>
 			<key>include</key>
 			<string>#attributes</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#enum</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#functionPrototype</string>
 		</dict>
 		<dict>
 			<key>include</key>
@@ -48,16 +40,14 @@
 			<string>#compilerCode</string>
 		</dict>
 		<dict>
+			<key>include</key>
+			<string>#builtinTypes</string>
+		</dict>
+		<dict>
 			<key>match</key>
 			<string>(\b(if|else|while|for|foreach|switch|match|return|break|continue|defer)\b)</string>
 			<key>name</key>
 			<string>keyword.control.source.rapid</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>(\b(override|final)\b)</string>
-			<key>name</key>
-			<string>keyword.other.inheritance.source.rapid</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -73,39 +63,9 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(\b(auto|function|delegate)\b)</string>
-			<key>name</key>
-			<string>keyword.other.auto.source.rapid</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>(\b(public|private|protected|internal|readonly|writeonly)\b)</string>
+			<string>(\b(readonly|writeonly)\b)</string>
 			<key>name</key>
 			<string>storage.modifier.rapid</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>(\b(module|alias|enum|bitmask|operator|attribute|unittest)\b)</string>
-			<key>name</key>
-			<string>storage.type.core.source.rapid</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>(\b(bool|int|int8|int16|int32|int64|uint|uint8|uint16|uint32|uint64)\b)</string>
-			<key>name</key>
-			<string>storage.type.integer.source.rapid</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>(\b(half|float|double|real|[hfd]vec[234]|[hfd]mat44|[hfd]mat43|[hfd]mat22)\b)</string>
-			<key>name</key>
-			<string>storage.type.float.source.rapid</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>(\b(void|char|uchar|string)\b)</string>
-			<key>name</key>
-			<string>storage.type.misc.source.rapid</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -114,38 +74,77 @@
 			<string>constant.language.source.rapid</string>
 		</dict>
 		<dict>
-			<key>match</key>
-			<string>(\b(this)\b)</string>
-			<key>name</key>
-			<string>variable.language.source.rapid</string>
+			<key>include</key>
+			<string>#attributes</string>
 		</dict>
 	</array>
 	<key>repository</key>
 	<dict>
 		<key>attributes</key>
 		<dict>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
+			<key>patterns</key>
+			<array>
 				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>entity.other.attribute-name.source.rapid</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>entity.other.attribute-name.value.source.rapid</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>entity.other.attribute-name.source.rapid</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(@[A-Za-z]+\()([A-Za-z0-9_., ]+)(\))</string>
+					<key>name</key>
+					<string>meta.definition.attribute.source.rapid</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(@[A-Za-z]+)</string>
 					<key>name</key>
 					<string>entity.other.attribute-name.source.rapid</string>
 				</dict>
-				<key>2</key>
+			</array>
+		</dict>
+		<key>builtinTypes</key>
+		<dict>
+			<key>patterns</key>
+			<array>
 				<dict>
+					<key>match</key>
+					<string>(\b(bool|int8|int16|int32|int64|uint8|uint16|uint32|uint64)\b)</string>
 					<key>name</key>
-					<string>entity.other.attribute-name.value.source.rapid</string>
+					<string>storage.type.integer.source.rapid</string>
 				</dict>
-				<key>3</key>
 				<dict>
+					<key>match</key>
+					<string>(\b(half|float|double|[hfd]vec[234]|[hfd]mat44|[hfd]mat43|[hfd]mat22)\b)</string>
 					<key>name</key>
-					<string>entity.other.attribute-name.source.rapid</string>
+					<string>storage.type.float.source.rapid</string>
 				</dict>
-			</dict>
-			<key>match</key>
-			<string>(@[A-Za-z]+\()([A-Za-z0-9_., ]+)(\))</string>
-			<key>name</key>
-			<string>meta.definition.attribute.source.rapid</string>
+				<dict>
+					<key>match</key>
+					<string>(\b(void|char|uchar|string)\b)</string>
+					<key>name</key>
+					<string>storage.type.misc.source.rapid</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(\b(auto|any|function|delegate)\b)</string>
+					<key>name</key>
+					<string>storage.type.auto.source.rapid</string>
+				</dict>
+			</array>
 		</dict>
 		<key>comments</key>
 		<dict>
@@ -199,36 +198,6 @@
 			<key>name</key>
 			<string>entity.other.attribute-name</string>
 		</dict>
-		<key>enum</key>
-		<dict>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>storage.modifier.source.rapid</string>
-				</dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>storage.type.enum.source.rapid</string>
-				</dict>
-				<key>3</key>
-				<dict>
-					<key>name</key>
-					<string>storage.type.integer.source.rapid</string>
-				</dict>
-				<key>4</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.type.enum.source.rapid</string>
-				</dict>
-			</dict>
-			<key>match</key>
-			<string>(?x)^\s*((?:\b(?:public|internal|local)\b\s)*)(enum)\s+([A-Za-z0-9_]+)\s+([A-Za-z0-9_]+)\b</string>
-			<key>name</key>
-			<string>meta.definition.enum.source.rapid</string>
-		</dict>
 		<key>functionPrototype</key>
 		<dict>
 			<key>name</key>
@@ -248,31 +217,6 @@
 					<string>(?&lt;=\w)(?:[\t ]+)((\.?[A-Za-z0-9_]+)+)\(</string>
 				</dict>
 			</array>
-		</dict>
-		<key>interface</key>
-		<dict>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>storage.modifier.source.rapid</string>
-				</dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>storage.type.interface.source.rapid</string>
-				</dict>
-				<key>3</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.type.interface.source.rapid</string>
-				</dict>
-			</dict>
-			<key>match</key>
-			<string>(?x)^\s*((?:\b(?:public|internal|local)\b\s)*)(interface)\s+([A-Za-z0-9_]+)\b</string>
-			<key>name</key>
-			<string>meta.definition.interface.source.rapid</string>
 		</dict>
 		<key>numbers</key>
 		<dict>
@@ -334,6 +278,31 @@
 				</dict>
 			</array>
 		</dict>
+		<key>storage</key>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>storage.modifier.source.rapid</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type.struct.source.rapid</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.type.struct.source.rapid</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(?x)^\s*((?:\b(?:internal|local)\b\s)*)(module|struct|enum|bits|attribute|alias)\s+([A-Za-z0-9_]+)\b</string>
+			<key>name</key>
+			<string>meta.definition.struct.source.rapid</string>
+		</dict>
 		<key>string</key>
 		<dict>
 			<key>begin</key>
@@ -365,83 +334,6 @@
 					<string>(\\.)</string>
 					<key>name</key>
 					<string>punctuation.definition.string</string>
-				</dict>
-			</array>
-		</dict>
-		<key>struct</key>
-		<dict>
-			<key>begin</key>
-			<string>(?x)^\s*((?:\b(?:public|internal|local)\b\s)*)(struct)\s+([A-Za-z0-9_]+)\b</string>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>storage.modifier.source.rapid</string>
-				</dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>storage.type.struct.source.rapid</string>
-				</dict>
-				<key>3</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.type.struct.source.rapid</string>
-				</dict>
-			</dict>
-			<key>end</key>
-			<string>(?:{)</string>
-			<key>name</key>
-			<string>meta.definition.struct.source.rapid</string>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>include</key>
-					<string>#structInheritance</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#attributes</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#comments</string>
-				</dict>
-			</array>
-		</dict>
-		<key>structInheritance</key>
-		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>begin</key>
-					<string>\b(implements)\b</string>
-					<key>captures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>keyword.other.implements.source.rapid</string>
-						</dict>
-					</dict>
-					<key>end</key>
-					<string>(?=[\{@])</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>captures</key>
-							<dict>
-								<key>1</key>
-								<dict>
-									<key>name</key>
-									<string>entity.other.inherited-class.source.rapid</string>
-								</dict>
-							</dict>
-							<key>match</key>
-							<string>(\s*,?([A-Za-z_]\w*)\b)</string>
-						</dict>
-					</array>
 				</dict>
 			</array>
 		</dict>
