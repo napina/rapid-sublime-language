@@ -1,0 +1,8 @@
+{
+	"cmd": ["rapidcompiler_x64_r", "$file"],
+    "selector": "source.rapid",
+    "encoding": "utf-8",
+    "windows": {
+        "cmd": ["rapidcompiler_x64_r", "$file"],
+    },
+}
