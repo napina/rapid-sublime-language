@@ -57,7 +57,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(\b(use)\b)</string>
+			<string>(\b(use|import)\b)</string>
 			<key>name</key>
 			<string>keyword.other.misc.source.rapid</string>
 		</dict>
