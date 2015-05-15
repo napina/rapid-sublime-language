@@ -7,10 +7,10 @@ uuid: cd4e6b22-a322-4771-8eef-91166b808f3d
 
 patterns:
 - include: '#comments'
+- include: '#variables'
 - include: '#numbers'
 - include: '#string'
 - include: '#storage'
-- include: '#attributes'
 #- include: '#enum'
 #- include: '#functionPrototype'
 - include: '#scopeLimit'
@@ -37,7 +37,7 @@ repository:
     - name: storage.type.float.source.rapid
       match: (\b(half|float|double|[hfd]vec[234]|[hfd]mat44|[hfd]mat43|[hfd]mat22)\b)
     - name: storage.type.misc.source.rapid
-      match: (\b(void|char|uchar|string)\b)
+      match: (\b(void|uchar|string)\b)
     - name: storage.type.auto.source.rapid
       match: (\b(auto|any|function|delegate)\b)
 
@@ -65,6 +65,14 @@ repository:
       match: (\b0x[\dA-Fa-f_]+\b)
     - name: constant.numeric.binary.source.rapid
       match: (\b0b(0|1)+\b)
+
+  variables:
+    name: meta.definition.struct.source.rapid
+    match: (\b[A-Za-z0-9_]+)\s*([:])\s*([#]?[A-Za-z0-9_]+\b)
+    captures:
+      '1': {name: variable.source.rapid}
+      '2': {name: storage.modifier.source.rapid}
+      '3': {name: storage.type.source.rapid}
 
   storage:
     name: meta.definition.struct.source.rapid
@@ -116,7 +124,7 @@ repository:
 
   compilerCode:
     name: entity.other.attribute-name
-    begin: (#)
-    end: ([#\n])
+    begin: (##)
+    end: (##)
 
 ...
