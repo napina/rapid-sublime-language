@@ -11,6 +11,7 @@ patterns:
 - include: '#numbers'
 - include: '#string'
 - include: '#storage'
+- include: '#storageSize'
 #- include: '#enum'
 #- include: '#functionPrototype'
 - include: '#scopeLimit'
@@ -33,13 +34,13 @@ repository:
   builtinTypes:
     patterns:
     - name: storage.type.integer.source.rapid
-      match: (\b(bool|int8|int16|int32|int64|uint8|uint16|uint32|uint64)\b)
+      match: (\b(bool|i8|i16|i32|i64|u8|u16|u32|u64)\b)
     - name: storage.type.float.source.rapid
       match: (\b(half|float|double|[hfd]vec[234]|[hfd]mat44|[hfd]mat43|[hfd]mat22)\b)
     - name: storage.type.misc.source.rapid
       match: (\b(void|uchar|string)\b)
     - name: storage.type.auto.source.rapid
-      match: (\b(auto|any|function|delegate)\b)
+      match: (\b(auto|any|fn|function|dl|delegate)\b)
 
   comments:
     patterns:
@@ -75,12 +76,19 @@ repository:
       '3': {name: storage.type.source.rapid}
 
   storage:
-    name: meta.definition.struct.source.rapid
-    match: (?x)^\s*((?:\b(?:internal|local)\b\s)*)(module|struct|enum|bits|attribute|alias)\s+([A-Za-z0-9_]+)\b
+    name: meta.definition.storage.source.rapid
+    match: (?x)^\s*(module|struct|alias)\s+([A-Za-z0-9_]+)\b
     captures:
-      '1': {name: storage.modifier.source.rapid}
-      '2': {name: storage.type.struct.source.rapid}
-      '3': {name: entity.name.type.struct.source.rapid}
+      '1': {name: storage.type.storage.source.rapid}
+      '2': {name: entity.name.type.storage.source.rapid}
+
+  storageSize:
+    name: meta.definition.enum.source.rapid
+    match: (?x)^\s*(enum|bits)\s+([A-Za-z0-9_.]+)\s+([A-Za-z0-9_]+)\b
+    captures:
+      '1': {name: storage.type.source.rapid}
+      '2': {name: storage.type.source.rapid}
+      '3': {name: entity.name.type.storage.source.rapid}
 
   functionPrototype:
     name: meta.definition.function.prototype.source.rapid
