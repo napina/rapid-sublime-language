@@ -18,7 +18,7 @@ patterns:
 - include: '#compilerCode'
 - include: '#builtinTypes'
 - name: keyword.control.source.rapid
-  match: (\b(if|else|while|for|foreach|switch|match|return|break|continue|defer)\b)
+  match: (\b(if|else|elif|while|for|foreach|switch|match|return|break|continue|defer)\b)
 - name: keyword.other.memory.source.rapid
   match: (\b(new|delete|soa|aos)\b)
 - name: keyword.other.misc.source.rapid

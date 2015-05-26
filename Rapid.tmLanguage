@@ -49,7 +49,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(\b(if|else|while|for|foreach|switch|match|return|break|continue|defer)\b)</string>
+			<string>(\b(if|else|elif|while|for|foreach|switch|match|return|break|continue|defer)\b)</string>
 			<key>name</key>
 			<string>keyword.control.source.rapid</string>
 		</dict>
