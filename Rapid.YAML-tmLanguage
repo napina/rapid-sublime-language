@@ -10,15 +10,17 @@ patterns:
 - include: '#variables'
 - include: '#numbers'
 - include: '#string'
+- include: '#char'
 - include: '#storage'
 - include: '#storageSize'
 #- include: '#enum'
 #- include: '#functionPrototype'
 - include: '#scopeLimit'
 - include: '#compilerCode'
+- include: '#directives'
 - include: '#builtinTypes'
 - name: keyword.control.source.rapid
-  match: (\b(if|else|elif|while|for|foreach|switch|match|return|break|continue|defer)\b)
+  match: (\b(if|else|elif|while|for|switch|match|return|break|continue|defer)\b)
 - name: keyword.other.memory.source.rapid
   match: (\b(new|delete|soa|aos)\b)
 - name: keyword.other.misc.source.rapid
@@ -110,6 +112,15 @@ repository:
       name: punctuation.definition.string
       # name: constant.character.escape.source.rapid
 
+  char:
+    name: string.quoted.single.source.rapid
+    begin: (')
+    beginCaptures:
+      '0': {name: punctuation.definition.string.begin.source.rapid}
+    end: (')
+    endCaptures:
+      '1': {name: punctuation.definition.string.end.source.rapid}
+
   attributes:
     patterns:
     - name: meta.definition.attribute.source.rapid
@@ -120,6 +131,11 @@ repository:
         '3': {name: entity.other.attribute-name.source.rapid}
     - name: entity.other.attribute-name.source.rapid
       match: (@[A-Za-z]+)
+
+  directives:
+    patterns:
+    - name: entity.other.directive-name.source.rapid
+      match: (#(intrinsic|todo|assert))
 
   scopeLimit:
     patterns:

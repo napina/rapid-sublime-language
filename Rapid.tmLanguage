@@ -29,6 +29,10 @@
 		</dict>
 		<dict>
 			<key>include</key>
+			<string>#char</string>
+		</dict>
+		<dict>
+			<key>include</key>
 			<string>#storage</string>
 		</dict>
 		<dict>
@@ -45,11 +49,15 @@
 		</dict>
 		<dict>
 			<key>include</key>
+			<string>#directives</string>
+		</dict>
+		<dict>
+			<key>include</key>
 			<string>#builtinTypes</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(\b(if|else|elif|while|for|foreach|switch|match|return|break|continue|defer)\b)</string>
+			<string>(\b(if|else|elif|while|for|switch|match|return|break|continue|defer)\b)</string>
 			<key>name</key>
 			<string>keyword.control.source.rapid</string>
 		</dict>
@@ -150,6 +158,31 @@
 				</dict>
 			</array>
 		</dict>
+		<key>char</key>
+		<dict>
+			<key>begin</key>
+			<string>(')</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.begin.source.rapid</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(')</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.end.source.rapid</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>string.quoted.single.source.rapid</string>
+		</dict>
 		<key>comments</key>
 		<dict>
 			<key>patterns</key>
@@ -201,6 +234,18 @@
 			<string>(##)</string>
 			<key>name</key>
 			<string>entity.other.attribute-name</string>
+		</dict>
+		<key>directives</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>(#(intrinsic|todo|assert))</string>
+					<key>name</key>
+					<string>entity.other.directive-name.source.rapid</string>
+				</dict>
+			</array>
 		</dict>
 		<key>functionPrototype</key>
 		<dict>
