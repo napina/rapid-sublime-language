@@ -42,7 +42,7 @@ repository:
     - name: storage.type.misc.source.rapid
       match: (\b(void|uchar|string)\b)
     - name: storage.type.auto.source.rapid
-      match: (\b(auto|any|fn|function|dl|delegate)\b)
+      match: (\b(auto|any|fn|function|dl|delegate|op|operator)\b)
 
   comments:
     patterns:
@@ -135,7 +135,7 @@ repository:
   directives:
     patterns:
     - name: entity.other.directive-name.source.rapid
-      match: (#(intrinsic|todo|assert))
+      match: (#(intrinsic|todo|assert|error|warning|deprecated))
 
   scopeLimit:
     patterns:
