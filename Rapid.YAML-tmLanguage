@@ -24,7 +24,7 @@ patterns:
 - name: keyword.other.memory.source.rapid
   match: (\b(new|delete|soa|aos)\b)
 - name: keyword.other.misc.source.rapid
-  match: (\b(use|import)\b)
+  match: (\b(use|import|inline)\b)
 - name: storage.modifier.rapid
   match: (\b(readonly|writeonly)\b)
 - name: constant.language.source.rapid
