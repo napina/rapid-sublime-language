@@ -5,7 +5,7 @@
     // Tab set
     {
         "class": "tabset_control",
-        "layer0.texture": "rapid-sublime-language/theme/tabset-background.png",
+        "layer0.texture": "User/rapid-sublime-language/theme/tabset-background.png",
         "layer0.inner_margin": [10, 0],
         "layer0.opacity": 1.0,
         "content_margin": [0, 4, 0, 0],
@@ -27,15 +27,15 @@
         "max_margin_trim": 0,
         "hit_test_level": 0.5,
         // Inactive tab settings
-        "layer0.texture": "rapid-sublime-language/theme/tab-inactive.png",
+        "layer0.texture": "User/rapid-sublime-language/theme/tab-inactive.png",
         "layer0.inner_margin": [20, 4],
         "layer0.opacity": 1.0,
         // Active tab setting
-        "layer1.texture": "rapid-sublime-language/theme/tab-active.png",
+        "layer1.texture": "User/rapid-sublime-language/theme/tab-active.png",
         "layer1.inner_margin": [20, 4],
         "layer1.opacity": 0.0,
         // Hover tab setting
-        "layer2.texture": "rapid-sublime-language/theme/tab-hover.png",
+        "layer2.texture": "User/rapid-sublime-language/theme/tab-hover.png",
         "layer2.inner_margin": [20, 4],
         "layer2.opacity": 0.0
     },
@@ -79,17 +79,17 @@
         "shadow_color": [75, 59, 83],
         "shadow_offset": [0, 0]
 
-},
+    },
     // Tab close button
     {
         "class": "tab_close_button",
         "content_margin": [0, 0],
         // Tab close default settings
-        "layer0.texture": "rapid-sublime-language/theme/tab-close.png",
+        "layer0.texture": "User/rapid-sublime-language/theme/tab-close.png",
         "layer0.opacity": 1.0,
         "layer0.inner_margin": [0, 0],
         // Tab close hover settings
-        "layer1.texture": "rapid-sublime-language/theme/tab-close-hover.png",
+        "layer1.texture": "User/rapid-sublime-language/theme/tab-close-hover.png",
         "layer1.opacity": 0.0
     },
     {
@@ -109,7 +109,7 @@
     {
         "class": "tab_close_button",
         "parents": [{"class": "tab_control", "attributes": ["dirty"]}],
-        "layer0.texture": "rapid-sublime-language/theme/tab-dirty.png",
+        "layer0.texture": "User/rapid-sublime-language/theme/tab-dirty.png",
         "layer0.opacity": 1.0,
         "layer1.opacity": 0.0
     },
@@ -150,7 +150,7 @@
     {
         "class": "tabset_control",
         "settings": ["flatland_square_tabs"],
-        "layer0.texture": "rapid-sublime-language/theme/square/tabset-background.png",
+        "layer0.texture": "User/rapid-sublime-language/theme/square/tabset-background.png",
         "content_margin": [0, 0, 0, 0]
         // "tab_overlap": 5
     },
@@ -158,11 +158,11 @@
         "class": "tab_control",
         "settings": ["flatland_square_tabs"],
         // Inactive tab settings
-        "layer0.texture": "rapid-sublime-language/theme/square/tab-inactive.png",
+        "layer0.texture": "User/rapid-sublime-language/theme/square/tab-inactive.png",
         // Active tab setting
-        "layer1.texture": "rapid-sublime-language/theme/square/tab-active.png",
+        "layer1.texture": "User/rapid-sublime-language/theme/square/tab-active.png",
         // Hover tab setting
-        "layer2.texture": "rapid-sublime-language/theme/square/tab-hover.png"
+        "layer2.texture": "User/rapid-sublime-language/theme/square/tab-hover.png"
     },
 
 //
@@ -171,10 +171,10 @@
 
     {
         "class": "fold_button_control",
-        "layer0.texture": "rapid-sublime-language/theme/fold-closed.png",
+        "layer0.texture": "User/rapid-sublime-language/theme/fold-closed.png",
         "layer0.opacity": 1.0,
         "layer0.inner_margin": 0,
-        "layer1.texture": "rapid-sublime-language/theme/fold-closed-pressed.png",
+        "layer1.texture": "User/rapid-sublime-language/theme/fold-closed-pressed.png",
         "layer1.opacity": 0.0,
         "layer1.inner_margin": 0,
         "content_margin": [9, 7, 8, 6]
@@ -194,8 +194,8 @@
     {
         "class": "fold_button_control",
         "attributes": ["expanded"],
-        "layer0.texture": "rapid-sublime-language/theme/fold-open.png",
-        "layer1.texture": "rapid-sublime-language/theme/fold-open-pressed.png"
+        "layer0.texture": "User/rapid-sublime-language/theme/fold-open.png",
+        "layer1.texture": "User/rapid-sublime-language/theme/fold-open-pressed.png"
     },
 
 //
@@ -205,7 +205,7 @@
     // Standard vertical scroll bar
     {
         "class": "scroll_bar_control",
-        "layer0.texture": "rapid-sublime-language/theme/standard-scrollbar-vertical.png",
+        "layer0.texture": "User/rapid-sublime-language/theme/standard-scrollbar-vertical.png",
         "layer0.opacity": 1.0,
         "layer0.inner_margin": [0, 6],
         "blur": false
@@ -214,7 +214,7 @@
     {
         "class": "scroll_bar_control",
         "attributes": ["horizontal"],
-        "layer0.texture": "rapid-sublime-language/theme/standard-scrollbar-horizontal.png",
+        "layer0.texture": "User/rapid-sublime-language/theme/standard-scrollbar-horizontal.png",
         "layer0.opacity": 1.0,
         "layer0.inner_margin": [6, 0],
         "blur": false
@@ -222,14 +222,14 @@
     // Standard scroll bar corner
     {
         "class": "scroll_corner_control",
-        "layer0.texture": "rapid-sublime-language/theme/standard-scrollbar-corner.png",
+        "layer0.texture": "User/rapid-sublime-language/theme/standard-scrollbar-corner.png",
         "layer0.opacity": 1.0,
         "layer0.inner_margin": [1, 1]
     },
     // Standard vertical scroll puck
     {
         "class": "puck_control",
-        "layer0.texture": "rapid-sublime-language/theme/standard-puck-vertical.png",
+        "layer0.texture": "User/rapid-sublime-language/theme/standard-puck-vertical.png",
         "layer0.opacity": 1.0,
         "layer0.inner_margin": [0, 10],
         "content_margin": [8, 12],
@@ -239,7 +239,7 @@
     {
         "class": "puck_control",
         "attributes": ["horizontal"],
-        "layer0.texture": "rapid-sublime-language/theme/standard-puck-horizontal.png",
+        "layer0.texture": "User/rapid-sublime-language/theme/standard-puck-horizontal.png",
         "layer0.opacity": 1.0,
         "layer0.inner_margin": [10, 0],
         "content_margin": [12, 8],
@@ -265,7 +265,7 @@
     {
         "class": "scroll_bar_control",
         "settings": ["overlay_scroll_bars"],
-        "layer0.texture": "rapid-sublime-language/theme/overlay-scrollbar-vertical.png",
+        "layer0.texture": "User/rapid-sublime-language/theme/overlay-scrollbar-vertical.png",
         "layer0.inner_margin": [0, 5],
         "blur": true
     },
@@ -274,7 +274,7 @@
         "class": "scroll_bar_control",
         "settings": ["overlay_scroll_bars"],
         "attributes": ["horizontal"],
-        "layer0.texture": "rapid-sublime-language/theme/overlay-scrollbar-horizontal.png",
+        "layer0.texture": "User/rapid-sublime-language/theme/overlay-scrollbar-horizontal.png",
         "layer0.inner_margin": [5, 0],
         "blur": true
     },
@@ -282,7 +282,7 @@
     {
         "class": "puck_control",
         "settings": ["overlay_scroll_bars"],
-        "layer0.texture": "rapid-sublime-language/theme/overlay-puck-vertical.png",
+        "layer0.texture": "User/rapid-sublime-language/theme/overlay-puck-vertical.png",
         "layer0.inner_margin": [0, 5],
         "content_margin": [5, 20],
         "blur": true
@@ -292,7 +292,7 @@
         "class": "puck_control",
         "settings": ["overlay_scroll_bars"],
         "attributes": ["horizontal"],
-        "layer0.texture": "rapid-sublime-language/theme/overlay-puck-horizontal.png",
+        "layer0.texture": "User/rapid-sublime-language/theme/overlay-puck-horizontal.png",
         "layer0.inner_margin": [5, 0],
         "content_margin": [20, 5],
         "blur": true
@@ -302,14 +302,14 @@
         "class": "puck_control",
         "settings": ["overlay_scroll_bars"],
         "attributes": ["dark"],
-        "layer0.texture": "rapid-sublime-language/theme/overlay-dark-puck-vertical.png"
+        "layer0.texture": "User/rapid-sublime-language/theme/overlay-dark-puck-vertical.png"
     },
     // Overlay light horizontal puck (for dark content)
     {
         "class": "puck_control",
         "settings": ["overlay_scroll_bars"],
         "attributes": ["horizontal", "dark"],
-        "layer0.texture": "rapid-sublime-language/theme/overlay-dark-puck-horizontal.png"
+        "layer0.texture": "User/rapid-sublime-language/theme/overlay-dark-puck-horizontal.png"
     },
 
 //
@@ -384,7 +384,7 @@
     // Tooltip container
     {
         "class": "tool_tip_control",
-        "layer0.texture": "rapid-sublime-language/theme/tooltip.png",
+        "layer0.texture": "User/rapid-sublime-language/theme/tooltip.png",
         "layer0.inner_margin": [1, 1],
         "layer0.opacity": 0.95,
         "content_margin": [3, 3]
@@ -401,7 +401,7 @@
     // Status bar container
     {
         "class": "status_bar",
-        "layer0.texture": "rapid-sublime-language/theme/status-bar-background.png",
+        "layer0.texture": "User/rapid-sublime-language/theme/status-bar-background.png",
         "layer0.opacity": 1.0,
         "layer0.inner_margin": [2, 2],
         "content_margin": [14, 4, 4, 4]
@@ -463,7 +463,7 @@
     // Sidebar rows
     {
         "class": "tree_row",
-        "layer0.texture": "rapid-sublime-language/theme/sidebar-row-selected.png",
+        "layer0.texture": "User/rapid-sublime-language/theme/sidebar-row-selected.png",
         "layer0.opacity": 0.0,
         "layer0.inner_margin": [1,1]
     },
@@ -471,7 +471,7 @@
     {
         "settings": ["flatland_gray_selected_sidebar"],
         "class": "tree_row",
-        "layer0.texture": "rapid-sublime-language/theme/sidebar-row-selected-gray.png",
+        "layer0.texture": "User/rapid-sublime-language/theme/sidebar-row-selected-gray.png",
         "layer0.opacity": 0.0,
         "layer0.inner_margin": [1,1]
     },
@@ -525,10 +525,10 @@
     // Sidebar file close
     {
         "class": "close_button",
-        "layer0.texture": "rapid-sublime-language/theme/file-close.png",
+        "layer0.texture": "User/rapid-sublime-language/theme/file-close.png",
         "layer0.opacity": 0.0,
         "layer0.inner_margin": 0,
-        "layer1.texture": "rapid-sublime-language/theme/file-close-selected.png",
+        "layer1.texture": "User/rapid-sublime-language/theme/file-close-selected.png",
         "layer1.opacity": 0.0,
         "layer1.inner_margin": 0,
         "content_margin": [8, 8]
@@ -549,62 +549,62 @@
     {
         "class": "close_button",
         "attributes": ["dirty"],
-        "layer0.texture": "rapid-sublime-language/theme/file-dirty.png",
+        "layer0.texture": "User/rapid-sublime-language/theme/file-dirty.png",
         "layer0.opacity": 1.0
     },
     {
         "class": "close_button",
         "attributes": ["dirty"],
         "parents": [{"class": "tree_row", "attributes": ["selected"]}],
-        "layer0.texture": "rapid-sublime-language/theme/file-dirty-selected.png"
+        "layer0.texture": "User/rapid-sublime-language/theme/file-dirty-selected.png"
     },
     {
         "class": "close_button",
         "attributes": ["dirty"],
         "parents": [{"class": "tree_row", "attributes": ["hover"]}],
-        "layer0.texture": "rapid-sublime-language/theme/file-close.png"
+        "layer0.texture": "User/rapid-sublime-language/theme/file-close.png"
     },
     // Sidebar file close hover
     {
         "class": "close_button",
         "attributes": ["hover"],
-        "layer0.texture": "rapid-sublime-language/theme/file-close-hover.png"
+        "layer0.texture": "User/rapid-sublime-language/theme/file-close-hover.png"
     },
     // Sidebar group closed
     {
         "class": "disclosure_button_control",
         "content_margin": [0, 6, 18, 7],
-        "layer0.texture": "rapid-sublime-language/theme/group-closed.png",
+        "layer0.texture": "User/rapid-sublime-language/theme/group-closed.png",
         "layer0.opacity": 1.0,
         "layer0.inner_margin": 0
     },
     {
         "class": "disclosure_button_control",
         "parents": [{"class": "tree_row", "attributes": ["hover"]}],
-        "layer0.texture": "rapid-sublime-language/theme/group-closed.png"
+        "layer0.texture": "User/rapid-sublime-language/theme/group-closed.png"
     },
     {
         "class": "disclosure_button_control",
         "parents": [{"class": "tree_row", "attributes": ["selected"]}],
-        "layer0.texture": "rapid-sublime-language/theme/group-closed-selected.png"
+        "layer0.texture": "User/rapid-sublime-language/theme/group-closed-selected.png"
     },
     // Sidebar group open
     {
         "class": "disclosure_button_control",
         "attributes": ["expanded"],
-        "layer0.texture": "rapid-sublime-language/theme/group-open.png"
+        "layer0.texture": "User/rapid-sublime-language/theme/group-open.png"
     },
     {
         "class": "disclosure_button_control",
         "attributes": ["expanded"],
         "parents": [{"class": "tree_row", "attributes": ["hover"]}],
-        "layer0.texture": "rapid-sublime-language/theme/group-open.png"
+        "layer0.texture": "User/rapid-sublime-language/theme/group-open.png"
     },
     {
         "class": "disclosure_button_control",
         "attributes": ["expanded"],
         "parents": [{"class": "tree_row", "attributes": ["selected"]}],
-        "layer0.texture": "rapid-sublime-language/theme/group-open-selected.png"
+        "layer0.texture": "User/rapid-sublime-language/theme/group-open-selected.png"
     },
 
 //
@@ -624,25 +624,25 @@
         {
             "keyframes":
             [
-                "rapid-sublime-language/theme/spinner/spin_1.png",
-                "rapid-sublime-language/theme/spinner/spin_2.png",
-                "rapid-sublime-language/theme/spinner/spin_3.png",
-                "rapid-sublime-language/theme/spinner/spin_4.png",
-                "rapid-sublime-language/theme/spinner/spin_5.png",
-                "rapid-sublime-language/theme/spinner/spin_6.png",
-                "rapid-sublime-language/theme/spinner/spin_7.png",
-                "rapid-sublime-language/theme/spinner/spin_8.png",
-                "rapid-sublime-language/theme/spinner/spin_9.png",
-                "rapid-sublime-language/theme/spinner/spin_10.png",
-                "rapid-sublime-language/theme/spinner/spin_11.png",
-                "rapid-sublime-language/theme/spinner/spin_12.png",
-                "rapid-sublime-language/theme/spinner/spin_13.png",
-                "rapid-sublime-language/theme/spinner/spin_14.png",
-                "rapid-sublime-language/theme/spinner/spin_15.png",
-                "rapid-sublime-language/theme/spinner/spin_16.png",
-                "rapid-sublime-language/theme/spinner/spin_17.png",
-                "rapid-sublime-language/theme/spinner/spin_18.png",
-                "rapid-sublime-language/theme/spinner/spin_19.png"
+                "User/rapid-sublime-language/theme/spinner/spin_1.png",
+                "User/rapid-sublime-language/theme/spinner/spin_2.png",
+                "User/rapid-sublime-language/theme/spinner/spin_3.png",
+                "User/rapid-sublime-language/theme/spinner/spin_4.png",
+                "User/rapid-sublime-language/theme/spinner/spin_5.png",
+                "User/rapid-sublime-language/theme/spinner/spin_6.png",
+                "User/rapid-sublime-language/theme/spinner/spin_7.png",
+                "User/rapid-sublime-language/theme/spinner/spin_8.png",
+                "User/rapid-sublime-language/theme/spinner/spin_9.png",
+                "User/rapid-sublime-language/theme/spinner/spin_10.png",
+                "User/rapid-sublime-language/theme/spinner/spin_11.png",
+                "User/rapid-sublime-language/theme/spinner/spin_12.png",
+                "User/rapid-sublime-language/theme/spinner/spin_13.png",
+                "User/rapid-sublime-language/theme/spinner/spin_14.png",
+                "User/rapid-sublime-language/theme/spinner/spin_15.png",
+                "User/rapid-sublime-language/theme/spinner/spin_16.png",
+                "User/rapid-sublime-language/theme/spinner/spin_17.png",
+                "User/rapid-sublime-language/theme/spinner/spin_18.png",
+                "User/rapid-sublime-language/theme/spinner/spin_19.png"
             ],
             "loop": true,
             "frame_time": 0.05
@@ -662,11 +662,11 @@
         "content_margin": [4, 6, 4, 5],
         "min_size": [69, 0],
         // Default button state
-        "layer0.texture": "rapid-sublime-language/theme/btn-large.png",
+        "layer0.texture": "User/rapid-sublime-language/theme/btn-large.png",
         "layer0.opacity": 1.0,
         "layer0.inner_margin": [6, 6],
         // Pressed button setup
-        "layer1.texture": "rapid-sublime-language/theme/btn-large-on.png",
+        "layer1.texture": "User/rapid-sublime-language/theme/btn-large-on.png",
         "layer1.opacity": 0.0,
         "layer1.inner_margin": [6, 6]
     },
@@ -684,7 +684,7 @@
     // Text input field item
     {
         "class": "text_line_control",
-        "layer0.texture": "rapid-sublime-language/theme/text-field.png",
+        "layer0.texture": "User/rapid-sublime-language/theme/text-field.png",
         "layer0.opacity": 1.0,
         "layer0.inner_margin": [10,10,10,10],
         "content_margin": [4, 5, 15, 4]
@@ -697,17 +697,17 @@
     // Bottom panel background
     {
         "class": "panel_control",
-        "layer0.texture": "rapid-sublime-language/theme/panel-background.png",
+        "layer0.texture": "User/rapid-sublime-language/theme/panel-background.png",
         "layer0.inner_margin": [2, 2, 2, 5],
         "layer0.opacity": 1.0
     },
     // Quick panel background
     {
         "class": "overlay_control",
-        "layer0.texture": "rapid-sublime-language/theme/overlay-bg.png",
+        "layer0.texture": "User/rapid-sublime-language/theme/overlay-bg.png",
         "layer0.inner_margin": [30, 30, 30, 30], // 9grid for the background
         "layer0.opacity": 1.0,
-        "layer1.texture": "rapid-sublime-language/theme/quick-panel-background.png",
+        "layer1.texture": "User/rapid-sublime-language/theme/quick-panel-background.png",
         "layer1.inner_margin": [20, 40, 20, 20],
         "layer1.opacity": 1.0,
         "content_margin": [20, 0, 20, 26] // content margin
@@ -731,14 +731,14 @@
     },
     {
         "class": "quick_panel_row",
-        "layer0.texture": "rapid-sublime-language/theme/quick-panel-row.png",
+        "layer0.texture": "User/rapid-sublime-language/theme/quick-panel-row.png",
         "layer0.inner_margin": [2, 2, 2, 2],
         "layer0.opacity": 1.0
     },
     {
         "class": "quick_panel_row",
         "attributes": ["selected"],
-        "layer0.texture": "rapid-sublime-language/theme/quick-panel-row-selected.png"
+        "layer0.texture": "User/rapid-sublime-language/theme/quick-panel-row-selected.png"
     },
     {
         "class": "quick_panel_label",
@@ -766,14 +766,14 @@
 
     {
         "class": "mini_quick_panel_row",
-        "layer0.texture": "rapid-sublime-language/theme/quick-panel-row.png",
+        "layer0.texture": "User/rapid-sublime-language/theme/quick-panel-row.png",
         "layer0.inner_margin": [2, 2, 2, 2],
         "layer0.opacity": 1.0
     },
     {
         "class": "mini_quick_panel_row",
         "attributes": ["selected"],
-        "layer0.texture": "rapid-sublime-language/theme/quick-panel-row-selected.png"
+        "layer0.texture": "User/rapid-sublime-language/theme/quick-panel-row-selected.png"
     },
 
 //
@@ -801,7 +801,7 @@
     },
     {
         "class": "table_row",
-        "layer0.texture": "rapid-sublime-language/theme/code-completion-row-selected.png",
+        "layer0.texture": "User/rapid-sublime-language/theme/code-completion-row-selected.png",
         "layer0.opacity": 0.0,
         "layer0.inner_margin": [1, 1]
     },
@@ -818,7 +818,7 @@
     // Button group middle
     {
         "class": "icon_button_control",
-        "layer0.texture": "rapid-sublime-language/theme/btn-group-middle.png",
+        "layer0.texture": "User/rapid-sublime-language/theme/btn-group-middle.png",
         "layer0.opacity": 1.0,
         "content_margin": [4, 4,4,5]
     },
@@ -826,7 +826,7 @@
     {
         "class": "icon_button_control",
         "attributes": ["left"],
-        "layer0.texture": "rapid-sublime-language/theme/btn-group-left.png",
+        "layer0.texture": "User/rapid-sublime-language/theme/btn-group-left.png",
         "layer0.opacity": 1.0,
         "content_margin": [8,4,5,5]
     },
@@ -834,7 +834,7 @@
     {
         "class": "icon_button_control",
         "attributes": ["right"],
-        "layer0.texture": "rapid-sublime-language/theme/btn-group-right.png",
+        "layer0.texture": "User/rapid-sublime-language/theme/btn-group-right.png",
         "layer0.opacity": 1.0,
         "content_margin": [4,4,8,5]
     },
@@ -842,7 +842,7 @@
     {
         "class": "icon_button_control",
         "attributes": ["left", "right"],
-        "layer0.texture": "rapid-sublime-language/theme/btn-single.png",
+        "layer0.texture": "User/rapid-sublime-language/theme/btn-single.png",
         "layer0.opacity": 1.0,
         "content_margin": [8,4,8,5]
     },
@@ -854,38 +854,38 @@
     // Regex search button
     {
         "class": "icon_regex",
-        "layer0.texture": "rapid-sublime-language/theme/icon-regex-off.png",
+        "layer0.texture": "User/rapid-sublime-language/theme/icon-regex-off.png",
         "layer0.opacity": 1.0,
         "content_margin": [8, 8]
     },
     {
         "class": "icon_regex",
         "parents": [{"class": "icon_button_control", "attributes": ["selected"]}],
-        "layer0.texture": "rapid-sublime-language/theme/icon-regex-on.png"
+        "layer0.texture": "User/rapid-sublime-language/theme/icon-regex-on.png"
     },
     // Case sensitive search button
     {
         "class": "icon_case",
-        "layer0.texture": "rapid-sublime-language/theme/icon-case-off.png",
+        "layer0.texture": "User/rapid-sublime-language/theme/icon-case-off.png",
         "layer0.opacity": 1.0,
         "content_margin": [8, 8]
     },
     {
         "class": "icon_case",
         "parents": [{"class": "icon_button_control", "attributes": ["selected"]}],
-        "layer0.texture": "rapid-sublime-language/theme/icon-case-on.png"
+        "layer0.texture": "User/rapid-sublime-language/theme/icon-case-on.png"
     },
     // Match whole word search button
     {
         "class": "icon_whole_word",
-        "layer0.texture": "rapid-sublime-language/theme/icon-word-off.png",
+        "layer0.texture": "User/rapid-sublime-language/theme/icon-word-off.png",
         "layer0.opacity": 1.0,
         "content_margin": [8, 8]
     },
     {
         "class": "icon_whole_word",
         "parents": [{"class": "icon_button_control", "attributes": ["selected"]}],
-        "layer0.texture": "rapid-sublime-language/theme/icon-word-on.png"
+        "layer0.texture": "User/rapid-sublime-language/theme/icon-word-on.png"
     },
 
 //
@@ -895,26 +895,26 @@
     // Show search context button
     {
         "class": "icon_context",
-        "layer0.texture": "rapid-sublime-language/theme/icon-context-off.png",
+        "layer0.texture": "User/rapid-sublime-language/theme/icon-context-off.png",
         "layer0.opacity": 1.0,
         "content_margin": [8, 8]
     },
     {
         "class": "icon_context",
         "parents": [{"class": "icon_button_control", "attributes": ["selected"]}],
-        "layer0.texture": "rapid-sublime-language/theme/icon-context-on.png"
+        "layer0.texture": "User/rapid-sublime-language/theme/icon-context-on.png"
     },
     // Use search buffer
     {
         "class": "icon_use_buffer",
-        "layer0.texture": "rapid-sublime-language/theme/icon-buffer-off.png",
+        "layer0.texture": "User/rapid-sublime-language/theme/icon-buffer-off.png",
         "layer0.opacity": 1.0,
         "content_margin": [8, 8]
     },
     {
         "class": "icon_use_buffer",
         "parents": [{"class": "icon_button_control", "attributes": ["selected"]}],
-        "layer0.texture": "rapid-sublime-language/theme/icon-buffer-on.png"
+        "layer0.texture": "User/rapid-sublime-language/theme/icon-buffer-on.png"
     },
 
 //
@@ -924,38 +924,38 @@
     // Reverse search direction button
     {
         "class": "icon_reverse",
-        "layer0.texture": "rapid-sublime-language/theme/icon-reverse-off.png",
+        "layer0.texture": "User/rapid-sublime-language/theme/icon-reverse-off.png",
         "layer0.opacity": 1.0,
         "content_margin": [8, 8]
     },
     {
         "class": "icon_reverse",
         "parents": [{"class": "icon_button_control", "attributes": ["selected"]}],
-        "layer0.texture": "rapid-sublime-language/theme/icon-reverse-on.png"
+        "layer0.texture": "User/rapid-sublime-language/theme/icon-reverse-on.png"
     },
     // Search wrap button
     {
         "class": "icon_wrap",
-        "layer0.texture": "rapid-sublime-language/theme/icon-wrap-off.png",
+        "layer0.texture": "User/rapid-sublime-language/theme/icon-wrap-off.png",
         "layer0.opacity": 1.0,
         "content_margin": [8, 8]
     },
     {
         "class": "icon_wrap",
         "parents": [{"class": "icon_button_control", "attributes": ["selected"]}],
-        "layer0.texture": "rapid-sublime-language/theme/icon-wrap-on.png"
+        "layer0.texture": "User/rapid-sublime-language/theme/icon-wrap-on.png"
     },
     // Search in selection button
     {
         "class": "icon_in_selection",
-        "layer0.texture": "rapid-sublime-language/theme/icon-selection-off.png",
+        "layer0.texture": "User/rapid-sublime-language/theme/icon-selection-off.png",
         "layer0.opacity": 1.0,
         "content_margin": [8, 8]
     },
     {
         "class": "icon_in_selection",
         "parents": [{"class": "icon_button_control", "attributes": ["selected"]}],
-        "layer0.texture": "rapid-sublime-language/theme/icon-selection-on.png"
+        "layer0.texture": "User/rapid-sublime-language/theme/icon-selection-on.png"
     },
 
 //
@@ -965,14 +965,14 @@
     // Preserve case button
     {
         "class": "icon_preserve_case",
-        "layer0.texture": "rapid-sublime-language/theme/icon-preserve-off.png",
+        "layer0.texture": "User/rapid-sublime-language/theme/icon-preserve-off.png",
         "layer0.opacity": 1.0,
         "content_margin": [8, 8]
     },
     {
         "class": "icon_preserve_case",
         "parents": [{"class": "icon_button_control", "attributes": ["selected"]}],
-        "layer0.texture": "rapid-sublime-language/theme/icon-preserve-on.png"
+        "layer0.texture": "User/rapid-sublime-language/theme/icon-preserve-on.png"
     },
 
 //
@@ -982,14 +982,14 @@
     // Highlight results button
     {
         "class": "icon_highlight",
-        "layer0.texture": "rapid-sublime-language/theme/icon-highlight-off.png",
+        "layer0.texture": "User/rapid-sublime-language/theme/icon-highlight-off.png",
         "layer0.opacity": 1.0,
         "content_margin": [8, 8]
     },
     {
         "class": "icon_highlight",
         "parents": [{"class": "icon_button_control", "attributes": ["selected"]}],
-        "layer0.texture": "rapid-sublime-language/theme/icon-highlight-on.png"
+        "layer0.texture": "User/rapid-sublime-language/theme/icon-highlight-on.png"
     }
 
 ]
