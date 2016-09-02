@@ -4,5 +4,8 @@
     "encoding": "utf-8",
     "windows": {
         "cmd": ["rapidcompiler_x64_r", "$file"]
+    },
+    "osx": {
+    	"cmd": ["/usr/local/bin/rapidcompiler_x64_r", "$file"]
     }
 }

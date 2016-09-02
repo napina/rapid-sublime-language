@@ -15,7 +15,7 @@ Build system
 ============
 
 Windows:
-Add compiler/bin folder PATH
+Add compiler/bin folder environment PATH
 
 OSX:
 Add symlink to /usr/local/bin
