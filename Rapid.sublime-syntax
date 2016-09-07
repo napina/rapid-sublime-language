@@ -1,0 +1,146 @@
+%YAML 1.2
+# https://www.sublimetext.com/docs/3/syntax.html
+---
+name: Rapid
+scope: source.rapid
+file_extensions: [rc, rh]
+
+contexts:
+  main:
+    - include: comments
+    - include: variables
+    - include: numbers
+    - include: string
+    - include: char
+    - include: storage
+    - include: storageSize
+    #- include: enum
+    #- include: functionPrototype
+    - include: scopeLimit
+    #- include: compilerCode
+    - include: directives
+    - include: builtinTypes
+    - match: (\b(if|else|elif|while|for|switch|match|return|break|continue|defer)\b)
+      scope: keyword.control.source.rapid
+    - match: (\b(new|delete|soa|aos)\b)
+      scope: keyword.other.memory.source.rapid
+    - match: (\b(use|import|inline|foreign)\b)
+      scope: keyword.other.misc.source.rapid
+    - match: (\b(readonly|writeonly)\b)
+      scope: storage.modifier.rapid
+    - match: (\b(true|false|null)\b)
+      scope: constant.language.source.rapid
+    - include: attributes
+
+  builtinTypes:
+    - match: (\b(bool|i8|i16|i32|i64|u8|u16|u32|u64)\b)
+      scope: storage.type.integer.source.rapid
+    - match: (\b(f16|f32|f64|[hfd]vec[234]|[hfd]mat44|[hfd]mat43|[hfd]mat22)\b)
+      scope: storage.type.float.source.rapid
+    - match: (\b(void|uchar|string)\b)
+      scope: storage.type.misc.source.rapid
+    - match: (\b(auto|any|fn|function|dl|delegate|op|operator)\b)
+      scope: storage.type.auto.source.rapid
+
+  comments:
+    - match: ((//).*$\n?)
+      captures:
+        1: punctuation.definition.comment.source.rapid
+      scope: comment.line.double-slash.source.rapid
+    - match: /\*
+      captures:
+        0: punctuation.definition.comment.source.rapid
+      scope: comment.block.source.rapid
+      set:
+        - meta_scope: comment.block.source.rapid
+        - match: \*/\n?
+          scope: comment.block.source.rapid
+          pop: true
+    #- include: comments
+
+  numbers:
+    - match: ((\b|-)[0-9_]+\.[0-9_]+(e\-[0-9]+)?)
+      scope: constant.numeric.float.source.rapid
+    - match: ((\b|-)[0-9_]+([ul]{1,2})?\b)
+      scope: constant.numeric.integer.source.rapid
+    - match: (\b0x[\dA-Fa-f_]+\b)
+      scope: constant.numeric.hex.source.rapid
+    - match: (\b0b(0|1)+\b)
+      scope: constant.numeric.binary.source.rapid
+
+  variables:
+    - match: (\b[A-Za-z0-9_]+)\s*([:])\s*([#]?[A-Za-z0-9_]+\b)
+      captures:
+        1: variable.source.rapid
+        2: storage.modifier.source.rapid
+        3: storage.type.source.rapid
+      name: meta.definition.struct.source.rapid
+
+  storage:
+    - match: (?x)^\s*(module|struct|alias)\s+([A-Za-z0-9_]+)\b
+      captures:
+        1: storage.type.storage.source.rapid
+        2: entity.name.type.storage.source.rapid
+      scope: meta.definition.storage.source.rapid
+
+  storageSize:
+    - match: (?x)^\s*(enum|bits)\s+([A-Za-z0-9_.]+)\s+([A-Za-z0-9_]+)\b
+      captures:
+        1: storage.type.source.rapid
+        2: storage.type.source.rapid
+        3: entity.name.type.storage.source.rapid
+      scope: meta.definition.enum.source.rapid
+
+  functionPrototype:
+    - match: (?<=\w)(?:[\t ]+)((\.?[A-Za-z0-9_]+)+)\(
+      captures:
+        1: entity.name.type.function.source.rapid
+      scope: meta.definition.function.prototype.source.rapid
+
+  string:
+    - meta_include_prototype: false
+    - match: (\")
+      scope: punctuation.definition.string.begin.source.rapid
+      set:
+        - meta_scope: string.quoted.single.source.rapid
+        - match: (\")
+          scope: punctuation.definition.string.end.source.rapid
+          pop: true
+
+  char:
+    - match: (')
+      scope: punctuation.definition.string.begin.source.rapid
+      set:
+        - meta_scope: string.quoted.single.source.rapid
+        - match: (')
+          scope: punctuation.definition.string.end.source.rapid
+          pop: true
+
+  attributes:
+    - match: (@[A-Za-z]+\()([A-Za-z0-9_., ]+)(\))
+      captures:
+        1: entity.other.attribute-name.source.rapid
+        2: entity.other.attribute-name.value.source.rapid
+        3: entity.other.attribute-name.source.rapid
+      scope: meta.definition.attribute.source.rapid
+    - match: (@[A-Za-z]+)
+      scope: entity.other.attribute-name.source.rapid
+
+  directives:
+    - match: (#(intrinsic|todo|assert|error|warning|deprecated))
+      scope: entity.other.directive-name.source.rapid
+
+  scopeLimit:
+    - match: (\[(\s*[A-Za-z0-9_]+,?)*\s*\])(?:\s*\{)
+      captures:
+        1: meta.tag.source.rapid
+    - match: (?:\))\s(\[(\s*[A-Za-z0-9_]+,?)*\s*\])(?:\s*(\b|\;))
+      captures:
+        1: meta.tag.source.rapid
+
+  #compilerCode:
+  #  name: entity.other.attribute-name
+  #  begin: (##)
+  #  end: (##)
+
+...
