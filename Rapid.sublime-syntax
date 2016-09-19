@@ -24,7 +24,7 @@ contexts:
       scope: keyword.control.source.rapid
     - match: (\b(new|delete|soa|aos)\b)
       scope: keyword.other.memory.source.rapid
-    - match: (\b(use|import|inline|foreign)\b)
+    - match: (\b(using|import|inline|foreign)\b)
       scope: keyword.other.misc.source.rapid
     - match: (\b(readonly|writeonly)\b)
       scope: storage.modifier.rapid
