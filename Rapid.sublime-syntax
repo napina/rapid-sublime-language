@@ -20,7 +20,7 @@ contexts:
     #- include: compilerCode
     - include: directives
     - include: builtinTypes
-    - match: (\b(if|else|elif|while|for|switch|match|return|break|continue|defer)\b)
+    - match: (\b(if|else|elif|while|for|switch|match|return|break|continue|defer|cast)\b)
       scope: keyword.control.source.rapid
     - match: (\b(new|delete|soa|aos)\b)
       scope: keyword.other.memory.source.rapid
@@ -39,7 +39,7 @@ contexts:
       scope: storage.type.float.source.rapid
     - match: (\b(void|uchar|string)\b)
       scope: storage.type.misc.source.rapid
-    - match: (\b(auto|any|fn|function|dl|delegate|op|operator)\b)
+    - match: (\b(any|fn|function|dl|delegate|op|operator)\b)
       scope: storage.type.auto.source.rapid
 
   comments:
