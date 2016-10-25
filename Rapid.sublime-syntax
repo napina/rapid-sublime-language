@@ -22,7 +22,7 @@ contexts:
     - include: builtinTypes
     - match: (\b(if|else|elif|while|for|switch|match|return|break|continue|defer|cast)\b)
       scope: keyword.control.source.rapid
-    - match: (\b(new|delete|soa|aos)\b)
+    - match: (\b(new|delete|soa|aos|align)\b)
       scope: keyword.other.memory.source.rapid
     - match: (\b(using|import|inline|foreign)\b)
       scope: keyword.other.misc.source.rapid
